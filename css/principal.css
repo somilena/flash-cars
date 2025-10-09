@@ -1,0 +1,433 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* --- Reset Básico e Variáveis de Cor --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-yellow: #ffc107;
+  --dark-bg: #121212;
+  --input-bg: #212121;
+  --text-color: #e0e0e0;
+  --label-color: #bdbdbd;
+  --border-color: #424242;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  background-image: url("../img/papel-parede.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  /* PROPRIEDADES PARA CORRIGIR O FOOTER */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Conteúdo Principal --- */
+main {
+  flex-grow: 1;
+  /* Altere o valor de 4rem para um maior, como 8rem */
+  padding: 8rem 0;
+}
+/* --- Header e Navegação --- */
+header {
+  position: fixed; /* << Essencial para o efeito de rolagem */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: transparent; /* << Começa transparente */
+  padding: 1rem 5%;
+  border-bottom: 1px solid transparent; /* << Borda começa transparente */
+  transition: background-color 0.4s ease-in-out, padding 0.4s ease-in-out; /* << Transição suave */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- CSS para a Logo com a Nova Fonte --- */
+.logo {
+  font-family: "Exo 2", sans-serif; /* APLICA A NOVA FONTE */
+  font-weight: 700; /* Garante que está em negrito */
+  font-style: italic; /* Garante que está em itálico */
+  font-size: 1.8rem; /* Aumentei um pouco para dar mais impacto */
+  text-decoration: none;
+  color: white;
+  letter-spacing: 1px; /* Um leve espaçamento entre as letras */
+}
+
+.logo i {
+  color: var(--primary-yellow);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* EFEITO DE HOVER NOS LINKS DO MENU */
+nav ul a:hover,
+nav a.active {
+  color: var(--primary-yellow);
+}
+
+/* --- Estilos para o Menu Suspenso (Dropdown) --- */
+
+/* Contêiner do dropdown (o item de lista LI) */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* O conteúdo do dropdown (a caixa que aparece) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateY(10px);
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Efeito de hover nos links do dropdown */
+.dropdown-content a:hover {
+  background-color: var(--primary-yellow);
+  color: #000;
+}
+
+/* Mostra o dropdown quando o mouse passa sobre o contêiner */
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo para a setinha no menu */
+.drop-btn .fa-chevron-down {
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+/* --- NOVO CSS COMPLETO PARA O FOOTER MODERNO --- */
+footer {
+  padding: 3rem 5% 1rem; /* Aumenta o espaçamento interno */
+  background: rgba(
+    10,
+    10,
+    10,
+    0.8
+  ); /* Fundo transparente (ajuste o 0.8 se quiser) */
+  border-top: 1px solid var(--border-color); /* Linha sutil no topo */
+}
+
+.footer-content {
+  max-width: 1200px; /* Define uma largura máxima para o conteúdo */
+  margin: 0 auto 2rem; /* Centraliza o container na página e mantém a margem inferior */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+/* Estilo geral para cada seção do rodapé */
+.footer-section {
+  flex: 1; /* Permite que as seções cresçam igualmente */
+  min-width: 220px; /* Largura mínima antes de quebrar a linha */
+}
+
+.footer-section h4 {
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-section p {
+  color: var(--label-color);
+  line-height: 1.6;
+}
+
+.footer-section.logo-footer .logo {
+  font-size: 1.5rem; /* Ajuste específico para o logo no footer */
+}
+
+/* Estilo para a barra de copyright inferior */
+.footer-bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--label-color);
+  font-size: 0.9rem;
+}
+
+/* Ajustes nos ícones sociais dentro do novo layout */
+.social-icons a {
+  color: var(--label-color);
+  margin-right: 1.2rem; /* Aumenta o espaçamento à direita */
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--primary-yellow);
+}
+
+/* --- EFEITO DE HEADER AO ROLAR A PÁGINA --- */
+#main-header.scrolled {
+  background: var(--dark-bg);
+  padding: 0.75rem 5%;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Seção Hero --- */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  /* ATENÇÃO: Verifique se o caminho para a sua imagem está correto! */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../img/hero-car-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--label-color);
+}
+
+.cta-button {
+  background-color: var(--primary-yellow);
+  color: #000;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Nova Seção de Destaques --- */
+.destaques {
+  padding: 5rem 0;
+  background-color: #0a0a0a;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.destaques h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.car-card {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.car-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.card-content p {
+  color: var(--label-color);
+  margin-bottom: 1.5rem;
+}
+
+.card-button {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid var(--primary-yellow);
+  color: var(--primary-yellow);
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.car-card:hover .card-button {
+  background-color: var(--primary-yellow);
+  color: #000;
+}
+
+/* --- Estilos para Links do Rodapé --- */
+.footer-links {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links a {
+  color: var(--label-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-yellow);
+}
+
+/* --- ESTILOS DO MODAL SOBRE NÓS --- */
+
+/* O fundo escuro que cobre a tela inteira (Overlay) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Classe que o JavaScript vai adicionar para mostrar o modal */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* A caixa de conteúdo do modal */
+.modal-content {
+  background-color: #1e1e1e;
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  border-top: 4px solid var(--primary-yellow);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  transform: scale(0.9);
+  transition: transform 0.4s ease;
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--label-color);
+  margin-bottom: 1rem;
+}
+
+/* Botão de fechar (o "X") */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--label-color);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-btn:hover {
+  color: white;
+  transform: rotate(90deg);
+}

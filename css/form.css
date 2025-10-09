@@ -1,0 +1,215 @@
+/* ==========================================================================
+   ARQUIVO ÚNICO DE ESTILOS PARA TODOS OS FORMULÁRIOS
+   ========================================================================== */
+
+/* --- Estilo do Container Geral do Formulário --- */
+.form-container {
+  max-width: 850px; /* Usando a largura maior que você prefere */
+  margin: 0 auto;
+  padding: 2.5rem 3rem; /* Um pouco mais de padding lateral */
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra mais sutil */
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white; /* Cor branca para consistência */
+}
+
+.form-container .subtitle {
+  text-align: center;
+  margin-bottom: 3rem; /* Mais espaço antes de começar o form */
+  color: var(--label-color);
+  font-size: 1rem;
+}
+
+/* --- Layout de Alinhamento (usando form-group) --- */
+.form-group {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1.5rem; /* Usaremos 'gap' para o espaçamento, é mais moderno */
+}
+
+/* O texto/label de cada campo (AQUI ESTÁ A MUDANÇA) */
+.form-group label {
+  flex-basis: 220px;
+  flex-shrink: 0;
+  padding-top: 0.75rem;
+  color: var(--label-color);
+
+  /* --- REFINAMENTOS DE ESTILO --- */
+  font-size: 0.8rem; /* Diminui o tamanho da fonte */
+  font-weight: 600; /* Deixa um pouco mais forte (semi-bold) */
+  text-transform: uppercase; /* DEIXA TUDO EM MAIÚSCULO */
+  letter-spacing: 1px; /* Adiciona um respiro entre as letras */
+}
+
+/* --- Estilo Geral dos Campos --- */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  flex: 1;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-yellow);
+  box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.25);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* --- Estilo Específico para o <select> --- */
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23bdbdbd' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  cursor: pointer;
+}
+
+/* --- Estilo do Upload de Arquivo --- */
+.file-upload-container {
+  text-align: left;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-upload-label {
+  background-color: var(--input-bg);
+  border: 1px dashed var(--border-color);
+  padding: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s;
+  color: var(--label-color);
+}
+
+.file-upload-label:hover {
+  background-color: #2a2a2a;
+  border-color: var(--primary-yellow);
+  color: var(--primary-yellow);
+}
+
+#file-name-display {
+  margin-left: 1rem;
+  color: var(--label-color);
+  font-style: italic;
+}
+
+/* --- Estilo do Botão de Envio --- */
+button[type="submit"] {
+  font-family: "Poppins";
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-yellow);
+  color: #111; /* Um preto um pouco mais suave que o #000 */
+  border: none;
+  border-radius: 8px; /* Cantos um pouco mais arredondados */
+  font-size: 1.1rem;
+  font-weight: 700; /* Mais forte para dar impacto */
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* Mais espaço entre as letras, visual moderno */
+  cursor: pointer;
+
+  /* A transição agora é mais completa para incluir a sombra */
+  transition: transform 0.2s ease-out, box-shadow 0.3s ease,
+    background-color 0.3s;
+
+  /* Sombra para dar profundidade e destacar o botão */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito ao passar o mouse por cima */
+button[type="submit"]:hover {
+  background-color: #ffda4b; /* Amarelo um pouco mais vibrante */
+
+  /* Efeito de "levantar" o botão */
+  transform: translateY(-4px);
+
+  /* Sombra mais pronunciada com um "brilho" amarelo */
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.3);
+}
+
+/* Efeito ao clicar no botão */
+button[type="submit"]:active {
+  /* Efeito de "pressionar" o botão, voltando à posição original */
+  transform: translateY(0);
+
+  /* Remove a sombra para dar a sensação de que foi afundado */
+  box-shadow: none;
+}
+
+/* --- Mensagem de Confirmação --- */
+#form-message {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--label-color);
+  font-size: 0.9rem;
+}
+
+/* --- ESTILOS ADICIONAIS PARA O MODAL DE CONFIRMAÇÃO --- */
+
+/* Deixa o conteúdo do modal de confirmação centralizado */
+.modal-content.text-center {
+  text-align: center;
+}
+
+/* Estilo do ícone de sucesso (check verde) */
+.confirm-icon {
+  font-size: 4rem; /* Tamanho grande */
+  color: #28a745; /* Cor verde para sucesso */
+  margin-bottom: 1.5rem;
+}
+
+/* Botão de fechar do modal (estilo similar ao de submit) */
+.modal-close-btn {
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  margin-top: 1.5rem;
+  background-color: var(--primary-yellow);
+  color: #111;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.modal-close-btn:hover {
+  background-color: #ffda4b;
+  transform: scale(1.05);
+}
