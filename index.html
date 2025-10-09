@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Flash Cars</title>
+    <link rel="stylesheet" href="css/principal.css" />
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header id="main-header">
+      <nav>
+        <a href="index.html" class="logo">
+          <i class="fa-solid fa-bolt-lightning"></i> FLASH CARS
+        </a>
+        <ul>
+          <li><a href="index.html" class="active">HOME</a></li>
+          <li class="dropdown">
+            <a href="#" class="drop-btn">
+              AGENDAMENTO <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="dropdown-content">
+              <a href="html/form-test.html">Agendar Test-Drive</a>
+              <a href="html/form-venda.html">Agendar Venda de Veículo</a>
+              <a href="html/form-lavajato.html">Agendar Lava-Jato</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>A Experiência de Dirigir Começa Aqui.</h1>
+          <p>Encontre o veículo premium que redefine seu caminho.</p>
+          <a href="#destaques" class="cta-button">VER ESTOQUE</a>
+        </div>
+      </section>
+
+      <section id="destaques" class="destaques">
+        <div class="container">
+          <h2>NOSSO ESTOQUE EM DESTAQUE</h2>
+          <div class="cards-container">
+            <article class="car-card">
+              <img src="img/destaque/carro-1.png" alt="Porsche 911" />
+              <div class="card-content">
+                <h3>Porsche 911 Carrera</h3>
+                <p>3.0 Turbo | 385 CV | 2024</p>
+                <a href="#" class="card-button">Ver Detalhes</a>
+              </div>
+            </article>
+            <article class="car-card">
+              <img src="img/destaque/carro-2.png" alt="Lamborghini Urus" />
+              <div class="card-content">
+                <h3>Lamborghini Urus</h3>
+                <p>4.0 V8 | 650 CV | 2023</p>
+                <a href="#" class="card-button">Ver Detalhes</a>
+              </div>
+            </article>
+            <article class="car-card">
+              <img src="img/destaque/carro-3.png" alt="BMW Série 5" />
+              <div class="card-content">
+                <h3>BMW Série 5</h3>
+                <p>2.0 Turbo | 252 CV | 2024</p>
+                <a href="#" class="card-button">Ver Detalhes</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section logo-footer">
+          <a href="index.html" class="logo">
+            <i class="fa-solid fa-bolt-lightning"></i> FLASH CARS
+          </a>
+        </div>
+        <div class="footer-section links">
+          <h4>Links Rápidos</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="index.html#sobre" id="open-sobre-footer-btn"
+                >Sobre Nós</a
+              >
+            </li>
+            <li>
+              <a href="https://wa.me/5511999999999" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contate-nos
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-section social">
+          <h4>Siga-nos</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Flash Cars - Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <div id="sobre-modal-overlay" class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-btn">&times;</button>
+        <h2>Nossa História</h2>
+        <p>
+          Nascida em 2020 da paixão por automóveis, a Flash Cars evoluiu para
+          ser a sua solução automotiva completa. Somos especialistas em conectar
+          clientes aos seus carros ideais através de serviços premium de compra,
+          venda e aluguel. Para garantir uma experiência total, oferecemos a
+          emoção do test-drive e o cuidado detalhista do nosso lava-jato. Nossa
+          missão é simples: proporcionar excelência e confiança em cada etapa da
+          sua jornada automotiva.
+        </p>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
