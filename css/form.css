@@ -213,3 +213,31 @@ button[type="submit"]:active {
   background-color: #ffda4b;
   transform: scale(1.05);
 }
+
+/* As regras dentro deste bloco só serão aplicadas se a tela tiver 768px de largura ou menos */
+@media (max-width: 768px) {
+  /* Nossas regras para celular e tablet virão aqui */
+}
+
+/* ==========================================================================
+   REGRAS DE RESPONSIVIDADE PARA CELULAR E TABLET
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Faz o label ficar em cima do campo de input */
+  .form-group {
+    flex-direction: column; /* Muda a direção do flex para coluna */
+    align-items: flex-start; /* Alinha o label à esquerda */
+    gap: 0.5rem; /* Diminui o espaço entre label e input */
+  }
+
+  /* Ajusta o label para o layout de coluna */
+  .form-group label {
+    flex-basis: auto; /* Remove a largura fixa */
+    padding-top: 0; /* Remove o padding extra */
+  }
+
+  /* Ajusta o padding do container do formulário em telas menores */
+  .form-container {
+    padding: 2rem 1.5rem;
+  }
+}
