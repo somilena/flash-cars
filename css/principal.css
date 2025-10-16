@@ -457,7 +457,7 @@ footer {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   /* Permite que os links do menu quebrem a linha se necessário */
   nav ul {
     flex-wrap: wrap;
@@ -468,6 +468,73 @@ footer {
   /* Ajusta o padding do conteúdo principal para não ficar atrás do header fixo */
   main {
     /* O padding-top deve ser um pouco maior que a altura do seu header no mobile */
-    padding-top: 10rem; 
+    padding-top: 10rem;
+  }
+}
+
+/* --- ESTILOS DO EASTER EGG KATCHAU --- */
+
+/* Botão Secreto no Rodapé */
+.easter-egg-trigger {
+  margin-top: 1rem;
+}
+
+#mcqueen-btn {
+  background: none;
+  border: none;
+  color: #e62321; /* Vermelho do McQueen */
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#mcqueen-btn:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Estilos específicos para o Modal Katchau */
+.katchau-modal {
+  border-top-color: #e62321; /* Borda vermelha */
+  text-align: center;
+  overflow: hidden;
+}
+
+.katchau-modal img {
+  max-width: 400px; 
+  display: block; /* Garante que a imagem se comporta como um bloco para o margin auto */
+  margin: 0 auto 1rem auto; /* Centraliza a imagem horizontalmente */
+  animation: drive-in 0.5s ease-out forwards;
+}
+
+.katchau-modal h2 {
+  color: var(--primary-yellow);
+  font-family: "Impact", Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0px #e62321;
+  /* Animação do texto aparecendo */
+  opacity: 0;
+  animation: fade-in-text 0.5s 0.3s ease-in forwards;
+}
+
+/* Animações */
+@keyframes drive-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-text {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
