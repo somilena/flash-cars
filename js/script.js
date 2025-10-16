@@ -192,3 +192,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 }); // Fim do 'DOMContentLoaded'
+
+document.addEventListener("DOMContentLoaded", function () {
+  // ===================================================================
+  // LÓGICA DO EASTER EGG KATCHAU
+  // ===================================================================
+  const mcqueenBtn = document.getElementById("mcqueen-btn");
+  const katchauModal = document.getElementById("katchau-modal-overlay");
+  const katchauSound = document.getElementById("katchau-sound");
+
+  // Só executa se os elementos existirem
+  if (mcqueenBtn && katchauModal && katchauSound) {
+    const closeBtn = katchauModal.querySelector(".close-btn");
+
+    const openKatchauModal = () => {
+      // Toca o som do início
+      katchauSound.currentTime = 0;
+      katchauSound.play();
+      // Mostra o modal
+      katchauModal.classList.add("active");
+    };
+
+    const closeKatchauModal = () => {
+      katchauModal.classList.remove("active");
+    };
+
+    // Adiciona os eventos de clique
+    mcqueenBtn.addEventListener("click", openKatchauModal);
+    closeBtn.addEventListener("click", closeKatchauModal);
+    katchauModal.addEventListener("click", (event) => {
+      // Fecha se clicar fora da caixa
+      if (event.target === katchauModal) {
+        closeKatchauModal();
+      }
+    });
+  }
+});
+
